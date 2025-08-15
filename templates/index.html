@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Logic Calculator</title>
+  <style>
+    
+    body {
+      background: #202020;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      width: 320px;
+    }
+
+    .display {
+      background: #000;
+      color: #0f0;
+      font-size: 28px;
+      padding: 20px;
+      text-align: right;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      min-height: 40px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2c2c2c;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    .equal {
+      background: #00b894;
+      grid-column: span 2;
+    }
+
+    .clear {
+      background: #d63031;
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+   
+  <div class="calculator">
+    <div class="display">{{ result or "0" }}</div>
+    <form method="POST">
+      {% for row in [
+          ["7", "8", "9", "/"],
+          ["4", "5", "6", "*"],
+          ["1", "2", "3", "-"],
+          ["0", ".", "=", "+"],
+          ["C"]
+        ]
+      %}
+        {% for btn in row %}
+          <button type="submit" name="btn" value="{{ btn }}"
+            class="{% if btn == '=' %}equal{% elif btn == 'C' %}clear{% endif %}">
+            {{ btn }}
+          </button>
+        {% endfor %}
+      {% endfor %}
+    </form>
+  </div>
+</body>
+</html>
