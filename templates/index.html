@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <title>Simple Logic Calculator</title>
   <style>
-    
     body {
-      background: #202020;
+      background: #f8e6ec; /* very light pink background */
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
@@ -16,16 +15,16 @@
     }
 
     .calculator {
-      background: #1e1e1e;
+      background: #f5c6d6; /* medium pastel pink box */
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(200, 80, 130, 0.4);
       width: 320px;
     }
 
     .display {
-      background: #000;
-      color: #0f0;
+      background: #e75480; /* stronger pink */
+      color: #fff; /* white text for contrast */
       font-size: 28px;
       padding: 20px;
       text-align: right;
@@ -45,23 +44,24 @@
       padding: 20px;
       border: none;
       border-radius: 8px;
-      background: #2c2c2c;
+      background: #f48fb1; /* soft pink buttons */
       color: white;
       cursor: pointer;
       transition: 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     button:hover {
-      background: #444;
+      background: #ec407a; /* darker pink on hover */
     }
 
     .equal {
-      background: #00b894;
+      background: #d81b60; /* bold darker pink */
       grid-column: span 2;
     }
 
     .clear {
-      background: #d63031;
+      background: #ad1457; /* deep pink/red */
       grid-column: span 2;
     }
   </style>
