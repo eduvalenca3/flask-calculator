@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <title>Simple Logic Calculator</title>
   <style>
+    
     body {
-      background: #ffebf0; /* very light pink background */
+      background: #202020;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
@@ -15,16 +16,16 @@
     }
 
     .calculator {
-      background: #ffe0ec; /* soft pastel pink */
+      background: #1e1e1e;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 0 20px rgba(200, 80, 130, 0.4);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       width: 320px;
     }
 
     .display {
-      background: #ffb6c1; /* medium pink */
-      color: #fff; /* white text */
+      background: #000;
+      color: #0f0;
       font-size: 28px;
       padding: 20px;
       text-align: right;
@@ -44,23 +45,23 @@
       padding: 20px;
       border: none;
       border-radius: 8px;
-      background: #f48fb1; /* pink tone */
+      background: #2c2c2c;
       color: white;
       cursor: pointer;
       transition: 0.2s;
     }
 
     button:hover {
-      background: #f06292; /* darker pink on hover */
+      background: #444;
     }
 
     .equal {
-      background: #ec407a; /* bold pink */
+      background: #00b894;
       grid-column: span 2;
     }
 
     .clear {
-      background: #d81b60; /* strong darker pink/red */
+      background: #d63031;
       grid-column: span 2;
     }
   </style>
@@ -68,4 +69,24 @@
 <body>
    
   <div class="calculator">
-
+    <div class="display">{{ result or "0" }}</div>
+    <form method="POST">
+      {% for row in [
+          ["7", "8", "9", "/"],
+          ["4", "5", "6", "*"],
+          ["1", "2", "3", "-"],
+          ["0", ".", "=", "+"],
+          ["C"]
+        ]
+      %}
+        {% for btn in row %}
+          <button type="submit" name="btn" value="{{ btn }}"
+            class="{% if btn == '=' %}equal{% elif btn == 'C' %}clear{% endif %}">
+            {{ btn }}
+          </button>
+        {% endfor %}
+      {% endfor %}
+    </form>
+  </div>
+</body>
+</html>
