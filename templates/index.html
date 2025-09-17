@@ -5,7 +5,7 @@
   <title>Simple Logic Calculator</title>
   <style>
     body {
-      background: #497019; /* very light pink background */
+      background: #e8f5e9; /* soft green background */
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
@@ -15,16 +15,16 @@
     }
 
     .calculator {
-      background: #390a61; /* medium pastel pink box */
+      background: #2e7d32; /* deep green */
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 0 20px rgba(8, 109, 6, 0.4);
+      box-shadow: 0 0 20px rgba(46, 125, 50, 0.4);
       width: 320px;
     }
 
     .display {
-      background: #331479; /* stronger pink */
-      color: #fff; /* white text for contrast */
+      background: #1b5e20; /* darker green for contrast */
+      color: #ffffff;
       font-size: 28px;
       padding: 20px;
       text-align: right;
@@ -44,30 +44,31 @@
       padding: 20px;
       border: none;
       border-radius: 8px;
-      background: #060363; /* soft pink buttons */
-      color: rgb(255, 255, 255);
+      background: #4caf50; /* medium green */
+      color: #ffffff;
       cursor: pointer;
       transition: 0.2s;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     button:hover {
-      background: #6eec40; /* darker pink on hover */
+      background: #66bb6a; /* lighter green on hover */
     }
 
     .equal {
-      background: #c5d81b; /* bold darker pink */
+      background: #fbc02d; /* vibrant yellow */
+      color: #000;
       grid-column: span 2;
     }
 
     .clear {
-      background: #2114ad; /* deep pink/red */
+      background: #d32f2f; /* strong red for clear */
+      color: #fff;
       grid-column: span 2;
     }
   </style>
 </head>
 <body>
-
 
   <div class="calculator">
     <div class="display">{{ result or "0" }}</div>
@@ -91,3 +92,4 @@
   </div>
 </body>
 </html>
+
